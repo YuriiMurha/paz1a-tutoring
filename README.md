@@ -3,6 +3,8 @@
 A practice project for **PAZ1a** at UPJŠ. Each exercise is a Java class whose methods you implement
 (look for `// TODO: Implement this`), plus a JUnit 5 test class that tells you when your solution works.
 
+**Stuck on a concept?** The [diagrams](diagrams/README.md) show each topic as a picture of what happens in memory.
+
 **Start with the recap** of the fundamentals (package `sk.upjs.paz1a.tutoring.recap`):
 
 | #  | Topic | You implement (in `src/main/java/sk/upjs/paz1a/tutoring/recap/`) | Tests |
