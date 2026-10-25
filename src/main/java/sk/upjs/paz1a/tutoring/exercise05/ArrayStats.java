@@ -40,7 +40,7 @@ public class ArrayStats {
 
     /**
      * Returns true if no element is greater than the element right after it.
-     * Equal neighbours are fine: {1, 2, 2, 5} -> true, {1, 3, 2} -> false.
+     * Equal neighbors are fine: {1, 2, 2, 5} -> true, {1, 3, 2} -> false.
      * An array with a single element is sorted.
      *
      * @throws IllegalArgumentException if {@code numbers} is null or empty
