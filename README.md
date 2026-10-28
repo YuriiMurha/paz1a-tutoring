@@ -4,7 +4,7 @@ A practice project for **PAZ1a** at UPJŠ. Each exercise is a Java class whose m
 (look for `// TODO: Implement this`), plus a JUnit 5 test class that tells you when your solution works.
 
 **Stuck on a concept?** The [diagrams](diagrams/README.md) show each topic as a picture of what happens in memory,
-and topics 05-10 have step-by-step guides for their exercises (hints, not answers).
+and every topic has a step-by-step guide for its exercises (hints, not answers).
 
 **Recap exercises** are warm-ups for every topic (package `sk.upjs.paz1a.tutoring.recap`):
 

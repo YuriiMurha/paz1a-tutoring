@@ -3,7 +3,7 @@
 One picture per topic, showing what Java actually does in memory. Start with **00** (the map), then read each
 diagram before or while you work on its exercises. Click an image to open it in full size.
 
-Stuck on an exercise from topics 05-10? Each has a **step-by-step guide** (last column below): pictures, steps,
+Stuck on an exercise? Every topic has a **step-by-step guide** (last column below): pictures, steps,
 hints and common mistakes for every method, without giving away the code.
 
 Every diagram uses the same colours:
@@ -14,10 +14,10 @@ Every diagram uses the same colours:
 | # | Diagram | Practise with | Step-by-step guide |
 |---|---------|---------------|--------------------|
 | 00 | [Java learning map](#00--java-learning-map) | | |
-| 01 | [Variables & primitive types](#01--variables-primitive-types--memory) | recap `BasicExpressions` | |
-| 02 | [Conditions & short-circuit](#02--conditions--short-circuit) | recap `Conditionals` | |
-| 03 | [Loops](#03--loops) | recap `LoopPractice` | |
-| 04 | [Methods & the call stack](#04--methods--the-call-stack) | recap `MethodDecomposition` | |
+| 01 | [Variables & primitive types](#01--variables-primitive-types--memory) | recap `BasicExpressions` | [topic 01 guide](topic-01-guide.md) |
+| 02 | [Conditions & short-circuit](#02--conditions--short-circuit) | recap `Conditionals` | [topic 02 guide](topic-02-guide.md) |
+| 03 | [Loops](#03--loops) | recap `LoopPractice` | [topic 03 guide](topic-03-guide.md) |
+| 04 | [Methods & the call stack](#04--methods--the-call-stack) | recap `MethodDecomposition` | [topic 04 guide](topic-04-guide.md) |
 | 05 | [Arrays](#05--arrays) | recap `ArrayBasics`, `ArrayChallenges`; `ArrayStats` | [topic 05 guide](topic-05-guide.md) |
 | 06 | [2D arrays](#06--2d-arrays) | recap `GridBasics`; `MatrixOps` | [topic 06 guide](topic-06-guide.md) |
 | 07 | [Classes, objects & encapsulation](#07--classes-objects--encapsulation) | recap `Rectangle`; `BankAccount` | [topic 07 guide](topic-07-guide.md) |
@@ -82,13 +82,13 @@ Trace with a finger, one arrow at a time. Then answer the questions under the di
 ![Methods and the call stack](04-call-stack.png)
 
 **Check yourself**
-1. If `cylinderVolume` did `radius = 0;`, what would `r` in `main` be?
-2. While `square` runs, how many frames are on the stack?
+1. If `totalSeconds` did `minutes = 0;`, what would `m` in `main` be?
+2. While `minutesToSeconds` runs, how many frames are on the stack?
 
 <details><summary>Answers</summary>
 
-1. Still `2.0`: `radius` is a copy.
-2. Three: `main`, `cylinderVolume`, `square`.
+1. Still `2`: `minutes` is a copy.
+2. Three: `main`, `totalSeconds`, `minutesToSeconds`.
 </details>
 
 ## 05 · Arrays
