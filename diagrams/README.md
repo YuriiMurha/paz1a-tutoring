@@ -3,24 +3,29 @@
 One picture per topic, showing what Java actually does in memory. Start with **00** (the map), then read each
 diagram before or while you work on its exercises. Click an image to open it in full size.
 
+Stuck on an exercise from topics 05-10? Each has a **step-by-step guide** (last column below): pictures, steps,
+hints and common mistakes for every method, without giving away the code.
+
 Every diagram uses the same colours:
 **blue** = Stack (method frames, local variables), **violet** = Heap (objects, arrays) and the arrows into it,
 **gray** = Java code, **orange** = a question / condition or a copied value, **green** = true / valid,
 **red** = false / error, **teal** = a return value, **yellow hand-drawn notes** = explanations.
 
-| # | Diagram | Practise with |
-|---|---------|---------------|
-| 00 | [Java learning map](#00--java-learning-map) | |
-| 01 | [Variables & primitive types](#01--variables-primitive-types--memory) | recap `exercise01/BasicExpressions` |
-| 02 | [Conditions & short-circuit](#02--conditions--short-circuit) | recap `exercise02/Conditionals` |
-| 03 | [Loops](#03--loops) | recap `exercise03/LoopPractice` |
-| 04 | [Methods & the call stack](#04--methods--the-call-stack) | recap `exercise04/MethodDecomposition` |
-| 05 | [Arrays](#05--arrays) | recap `exercise05/ArrayBasics`, `exercise05/ArrayStats` |
-| 06 | [2D arrays](#06--2d-arrays) | `exercise06/MatrixOps` |
-| 07 | [Classes, objects & encapsulation](#07--classes-objects--encapsulation) | `exercise07/BankAccount` |
-| 08 | [Pass-by-value & references](#08--pass-by-value--references) | `exercise08/Player`, `TeamRoster` |
-| 09 | [Inheritance & dynamic dispatch](#09--inheritance--dynamic-dispatch) | `exercise09` smart home |
-| 10 | [Recursion & linked structures](#10--recursion--linked-structures) | `exercise10/RecursiveUtils` |
+| # | Diagram | Practise with | Step-by-step guide |
+|---|---------|---------------|--------------------|
+| 00 | [Java learning map](#00--java-learning-map) | | |
+| 01 | [Variables & primitive types](#01--variables-primitive-types--memory) | recap `BasicExpressions` | |
+| 02 | [Conditions & short-circuit](#02--conditions--short-circuit) | recap `Conditionals` | |
+| 03 | [Loops](#03--loops) | recap `LoopPractice` | |
+| 04 | [Methods & the call stack](#04--methods--the-call-stack) | recap `MethodDecomposition` | |
+| 05 | [Arrays](#05--arrays) | recap `ArrayBasics`, `ArrayChallenges`; `ArrayStats` | [topic 05 guide](topic-05-guide.md) |
+| 06 | [2D arrays](#06--2d-arrays) | recap `GridBasics`; `MatrixOps` | [topic 06 guide](topic-06-guide.md) |
+| 07 | [Classes, objects & encapsulation](#07--classes-objects--encapsulation) | recap `Rectangle`; `BankAccount` | [topic 07 guide](topic-07-guide.md) |
+| 08 | [Pass-by-value & references](#08--pass-by-value--references) | recap `Point`, `PointTools`; `Player`, `TeamRoster` | [topic 08 guide](topic-08-guide.md) |
+| 09 | [Inheritance & dynamic dispatch](#09--inheritance--dynamic-dispatch) | recap shapes; smart home | [topic 09 guide](topic-09-guide.md) |
+| 10 | [Recursion & linked structures](#10--recursion--linked-structures) | recap `RecursionBasics`; `RecursiveUtils` | [topic 10 guide](topic-10-guide.md) |
+
+(Before the `;` = recap exercise, after it = main exercise.)
 
 **How to study with them:** cover the right half of a diagram and predict the result before you read the notes.
 Trace with a finger, one arrow at a time. Then answer the questions under the diagram, and only then open the answers.
@@ -148,28 +153,28 @@ Trace with a finger, one arrow at a time. Then answer the questions under the di
 ![Inheritance, overriding and dynamic dispatch](09-inheritance-dispatch.png)
 
 **Check yourself**
-1. `Shape s = new Rectangle(2, 3);` What does `s.getArea()` return?
-2. Only `Circle` has `getRadius()`. Does `Shape s = new Circle(1); s.getRadius();` compile?
-3. Can you write `new Shape()`?
+1. `Animal a = new Cat("Tom");` What does `a.speak()` return?
+2. Only `Dog` has a `fetch()` method. Does `Animal a = new Dog("Rex"); a.fetch();` compile?
+3. Can you write `new Animal("X")`?
 
 <details><summary>Answers</summary>
 
-1. `6.0`: the real object is a Rectangle, so its version runs.
-2. No. The declared type `Shape` decides what you may call, and Shape has no `getRadius()`.
-3. No, `Shape` is abstract.
+1. `"Meow!"`: the real object is a Cat, so its version runs.
+2. No. The declared type `Animal` decides what you may call, and Animal has no `fetch()`.
+3. No, `Animal` is abstract.
 </details>
 
 ## 10 · Recursion & linked structures
 ![Recursion on the call stack and a linked list](10-recursion-linked.png)
 
 **Check yourself**
-1. What is `power(3, 2)`, and how many `power` frames are on the stack at the deepest point?
+1. What does `countdown(1)` return? How many `countdown` frames are on the stack at the deepest point of `countdown(4)`?
 2. What happens if you delete the base case?
-3. What does `length` return for a list with one node?
+3. A list has a single node with `data = 5`. What does `printReverse` print?
 
 <details><summary>Answers</summary>
 
-1. `9`, and 3 frames: `power(3, 2)`, `power(3, 1)`, `power(3, 0)`.
+1. `"1 Go!"`, and 5 frames: `countdown(4)` down to `countdown(0)`.
 2. The calls never stop (n goes 0, -1, -2, …) → `StackOverflowError`.
-3. `1`: `1 + length(null)` = `1 + 0`.
+3. `5 `: first `printReverse(null)` prints nothing, then the node prints itself.
 </details>
