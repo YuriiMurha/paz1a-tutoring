@@ -1,12 +1,12 @@
 # Topic 11 · Strings: step-by-step guide
 
 This guide walks you through **recap 11 (`StringBasics`)** and **exercise 11 (`StringPuzzles`)**.
-It gives you steps and hints, **not finished code**: you still write every method yourself. The ideas behind every
-hint are explained in the [strings lecture](../lectures/topic-11-strings.md); the section numbers below (like
-*lecture 4.3*) point into it.
+It gives you pictures, steps and hints, **not finished code**: you still write every method yourself. The ideas
+behind every hint are explained in the [strings lecture](../lectures/topic-11-strings.md); the section numbers below
+(like *lecture 4.3*) point into it.
 
-**How to use it:** do one method at a time. Read its goal, follow the steps, write the code, then run that method's
-tests. Only when they are green, move on.
+**How to use it:** do one method at a time. Look at its card in the picture, follow the steps, write the code, then
+run that method's tests. Only when they are green, move on.
 
 ## Before you start: five facts
 
@@ -34,6 +34,10 @@ for (int i = 0; i < text.length(); i++) {
 You write: `src/main/java/sk/upjs/paz1a/tutoring/recap/exercise11/StringBasics.java`. Tests: `StringBasicsTest`.
 The `null` checks are already written for you, so you only write the logic. Any method of `String`,
 `StringBuilder` and `Character` is allowed.
+
+### Methods A–D (picture 11a)
+
+![Guide pictures for StringBasics, part 1](11a-guide-string-basics-1.png)
 
 ### A · `countChar` (\*): how many times?
 
@@ -116,6 +120,10 @@ return word.substring(___, ___).toUpperCase() + word.substring(___).___();
 - `clean == "stop"`: it may even pass some tests, because literals are shared (lecture 3), but
   `comparesContentNotReferences` passes Strings created while the program runs, and `==` then says `false`.
 - Removing **all** spaces (`replace(" ", "")`): then `"st op"` would count as `"stop"`.
+
+### Methods E–I (picture 11b)
+
+![Guide pictures for StringBasics, part 2](11b-guide-string-basics-2.png)
 
 ### E · `fileExtension` (\*\*): everything after the last dot
 
@@ -223,6 +231,10 @@ checks that. Arrays, `String`, `StringBuilder` and `Character` give you everythi
 
 **Tip:** write small `private` helper methods (like `isDigit(char c)` or `isLetter…`). The hard puzzles get much
 shorter, and you can reuse the helpers.
+
+### Puzzles A–E (picture 11c)
+
+![Guide pictures for StringPuzzles, part 1](11c-guide-string-puzzles-1.png)
 
 ### A · `reverseWords` (\*): the last word first
 
@@ -334,6 +346,10 @@ Work out one letter on paper first: `'y'` shifted by `3`.
 - Counting **all** occurrences of a character (`"aabaa"` → `"a4b1"`): only **neighbouring** equal characters form a run.
 - Forgetting the last run: with a `for` loop that appends "when the character changes", the final run never sees a
   change. (The `while` loop from step 2 avoids that.)
+
+### Puzzles F–J (picture 11d)
+
+![Guide pictures for StringPuzzles, part 2](11d-guide-string-puzzles-2.png)
 
 ### F · `isBalanced` (\*\*): matching brackets
 
