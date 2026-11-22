@@ -8,7 +8,7 @@
     <artifactId>paz1a-tutoring</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>PAZ1a Tutoring</name>
-    <description>Practice exercises 05-10 for PAZ1a at UPJS, checked by JUnit 5 tests.</description>
+    <description>Practice exercises 05-11 for PAZ1a at UPJS, checked by JUnit 5 tests.</description>
 
     <properties>
         <!-- "release" also stops you from accidentally using APIs newer than Java 17 -->

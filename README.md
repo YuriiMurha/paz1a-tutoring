@@ -4,7 +4,8 @@ A practice project for **PAZ1a** at UPJŠ. Each exercise is a Java class whose m
 (look for `// TODO: Implement this`), plus a JUnit 5 test class that tells you when your solution works.
 
 **Stuck on a concept?** The [diagrams](diagrams/README.md) show each topic as a picture of what happens in memory,
-and every topic has a step-by-step guide for its exercises (hints, not answers).
+and every topic has a step-by-step guide for its exercises (hints, not answers). Topic 11 also has a full
+[lecture on strings](lectures/topic-11-strings.md): every method, the traps, and patterns for harder puzzles.
 
 **Recap exercises** are warm-ups for every topic (package `sk.upjs.paz1a.tutoring.recap`):
 
@@ -20,8 +21,9 @@ and every topic has a step-by-step guide for its exercises (hints, not answers).
 | 08 | References & pass-by-value | `exercise08/Point`, `exercise08/PointTools` | `PointToolsTest` |
 | 09 | Inheritance & dynamic dispatch | `exercise09/Shape`, `Circle`, `Square`, `RightTriangle`, `ShapeTools` | `ShapesTest` |
 | 10 | Recursion & linked lists | `exercise10/RecursionBasics` (uses `Node`) | `RecursionBasicsTest` |
+| 11 | Strings | `exercise11/StringBasics` | `StringBasicsTest` |
 
-**Main exercises** are the harder tasks for topics 05–10 (package `sk.upjs.paz1a.tutoring`):
+**Main exercises** are the harder tasks for topics 05–11 (package `sk.upjs.paz1a.tutoring`):
 
 | #  | Topic | You implement (in `src/main/java/sk/upjs/paz1a/tutoring/`) | Tests |
 |----|-------|------------------------------------------------------------|-------|
@@ -31,6 +33,7 @@ and every topic has a step-by-step guide for its exercises (hints, not answers).
 | 08 | References & objects | `exercise08/Player`, `exercise08/TeamRoster` | `TeamRosterTest` |
 | 09 | Inheritance & polymorphism | `exercise09/Device`, `Light`, `Thermostat`, `SmartHomeHub` | `SmartHomeTest` |
 | 10 | Recursion | `exercise10/RecursiveUtils` | `RecursiveUtilsTest` |
+| 11 | String puzzles | `exercise11/StringPuzzles` | `StringPuzzlesTest` |
 
 ## 1. Open the project in IntelliJ IDEA
 
@@ -62,7 +65,7 @@ No Maven installed? Use the included Maven Wrapper the same way: `.\mvnw.cmd tes
 
 ## 3. Work through the exercises
 
-Go topic by topic. Topics 01–04 have only a recap; for 05–10 do the **recap first** as a warm-up, then the
+Go topic by topic. Topics 01–04 have only a recap; for 05–11 do the **recap first** as a warm-up, then the
 **main exercise** with the same number. For each exercise:
 
 1. Read the class. The Javadoc above each method says exactly what to return and which inputs to reject.
@@ -71,7 +74,7 @@ Go topic by topic. Topics 01–04 have only a recap; for 05–10 do the **recap 
 4. When the whole test class is green, move on to the next exercise.
 
 Ground rules: don't edit the tests, don't change method signatures, and write your own loops for the
-array exercises (no `java.util.Arrays`, no streams).
+array exercises (no `java.util.Arrays`, no streams). Exercise 11 uses nothing from `java.util` at all.
 
 | Exercise | What to watch out for |
 |----------|-----------------------|
@@ -86,12 +89,14 @@ array exercises (no `java.util.Arrays`, no streams).
 | **Recap 08** `Point`, `PointTools` | Read the first test: Java passes a *copy of the reference*. A shallow copy shares the points; a deep copy needs `copy()` for each one. |
 | **Recap 09** shapes | Write `area()`/`perimeter()` in each subclass and `isLargerThan` once in `Shape`. `ShapeTools` uses only the `Shape` type, so no `instanceof`. |
 | **Recap 10** `RecursionBasics` | A list is `null` or a node followed by a shorter list: base case `head == null`, recursive step on `head.getNext()`. No loops. |
+| **Recap 11** `StringBasics` | Compare Strings with `equals`, never `==`. `toUpperCase()` and friends return a *new* String, so keep the result. `substring(begin, end)` excludes `end`. `"".split(...)` gives one empty piece. Build long text with a `StringBuilder`: a test times `numberList`. |
 | **05** `ArrayStats` | Input checks are already written, so read them. Beware of integer division (`5 / 2 == 2`) and `int` overflow when summing. `filterPositive` needs two passes: count first, then copy. |
 | **06** `MatrixOps` | `matrix.length` is the number of rows, `matrix[0].length` the number of columns. This time **you** write the input checks (see `@throws`). |
 | **07** `BankAccount` | Fields stay `private`, and the balance changes only through `deposit`/`withdraw`. `toString()` must match IntelliJ's **Code → Generate → toString()** output. |
 | **08** `Player`, `TeamRoster` | `=` copies a *reference*, not an object. Write the `Player` copy constructor first, then use it in `createDeepCopyRoster()`. |
 | **09** smart home | Subclasses call `super(id)` and use `getId()`/`isOn()`, because `Device`'s fields are private. `SmartHomeHub` must work for every `Device`, so no `instanceof`. |
 | **10** `RecursiveUtils` | Write the base case first, then the recursive step. Loops are forbidden, and a test checks for them. |
+| **11** `StringPuzzles` | Ten puzzles from (\*) to (\*\*\*). Only `String`, `StringBuilder`, `Character` and arrays, and a test checks for that. Counting arrays (`int[26]`), a `char[]` stack and your own number parsing are the tools. Write helper methods. |
 
 ## Troubleshooting
 
@@ -99,4 +104,4 @@ array exercises (no `java.util.Arrays`, no streams).
 |---------|-----|
 | `release version 17 not supported` | Maven is running on an older Java. Point `JAVA_HOME` (terminal) or the project SDK (IntelliJ) to JDK 17+. |
 | `package org.junit.jupiter.api does not exist` | Maven tool window → **Reload All Maven Projects**. |
-| `solvedWithoutLoops` fails with *Cannot find …java* | Run the tests from the project folder (IntelliJ and Maven do that by default). |
+| `solvedWithoutLoops` or `solvedWithStringsCharsAndArraysOnly` fails with *Cannot find …java* | Run the tests from the project folder (IntelliJ and Maven do that by default). |

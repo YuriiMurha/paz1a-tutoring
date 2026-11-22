@@ -24,6 +24,7 @@ Every diagram uses the same colours:
 | 08 | [Pass-by-value & references](#08--pass-by-value--references) | recap `Point`, `PointTools`; `Player`, `TeamRoster` | [topic 08 guide](topic-08-guide.md) |
 | 09 | [Inheritance & dynamic dispatch](#09--inheritance--dynamic-dispatch) | recap shapes; smart home | [topic 09 guide](topic-09-guide.md) |
 | 10 | [Recursion & linked structures](#10--recursion--linked-structures) | recap `RecursionBasics`; `RecursiveUtils` | [topic 10 guide](topic-10-guide.md) |
+| 11 | [Strings](#11--strings) | recap `StringBasics`; `StringPuzzles` | [topic 11 guide](topic-11-guide.md) + [lecture](../lectures/topic-11-strings.md) |
 
 (Before the `;` = recap exercise, after it = main exercise.)
 
@@ -177,4 +178,23 @@ Trace with a finger, one arrow at a time. Then answer the questions under the di
 1. `"1 Go!"`, and 5 frames: `countdown(4)` down to `countdown(0)`.
 2. The calls never stop (n goes 0, -1, -2, …) → `StackOverflowError`.
 3. `5 `: first `printReverse(null)` prints nothing, then the node prints itself.
+</details>
+
+## 11 · Strings
+![Strings: the pool, immutability, positions and chars as numbers](11-strings.png)
+
+The [strings lecture](../lectures/topic-11-strings.md) explains everything in this picture in depth.
+
+**Check yourself**
+1. `String x = "ok"; String y = x.toUpperCase();` What are `x` and `y` now? How many String objects are there?
+2. With `a` and `c` from section A, what do `a == c` and `a.equals(c)` give? Which one should you use?
+3. What is `"HELLO, WORLD".substring(0, 5)`, and how many characters does it have?
+4. What is `'9' - '0'`? And what does `System.out.println('a' + 'b');` print?
+
+<details><summary>Answers</summary>
+
+1. `x` is still `"ok"`, `y` is `"OK"`: two objects. `toUpperCase` never changes `x`, it returns a new String.
+2. `false` (two different objects) and `true` (the same characters). Use `equals` for Strings.
+3. `"HELLO"`: indexes 0 to 4, because 5 is not included. 5 - 0 = 5 characters.
+4. `9`. It prints `195`: two chars add up as numbers (97 + 98) before anything is printed.
 </details>
